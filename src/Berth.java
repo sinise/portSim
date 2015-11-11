@@ -3,10 +3,10 @@
  */
 package com.company;
 public class Berth {
-    String id;
-    String ocupied;
+    public String id;
+    public int ocupied;
 
-    public Berth(int id, String ocupied){
+    public Berth(int id, int ocupied){
         this.id = "" + id;
         this.ocupied = ocupied;
     }

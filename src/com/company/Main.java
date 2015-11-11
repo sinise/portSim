@@ -40,23 +40,38 @@ public class Main {
 
 
     public static void main(String[] args) {
-        ArrayList<Berth> berths = new ArrayList<Berth>();
+        ArrayList<com.company.Berth> berths = new ArrayList<com.company.Berth>();
         Random randomGenerator = new Random();
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 10; i++) {
             int randId = randomGenerator.nextInt(1000000);
-            berths.add(new Berth(randId, "1"));
+            berths.add(new com.company.Berth(randId, 1));
         }
         for (int i = 0; i < berths.size(); i++) {
             try {
                 String jsonString = berths.get(i).json();
                 Main.sendJson(jsonString);
-                System.out.println("this is the string send to sendJson  " + jsonString);
             }catch(MalformedURLException e){
                 e.printStackTrace();
             }catch(IOException e){
                 e.printStackTrace();
             }
         }
+       while(true){
+           int randId = randomGenerator.nextInt(berths.size());
+           berths.get(randId).ocupied = 0;
+            System.out.println("-------");
+           try {
+               String jsonString = berths.get(randId).json();
+               Main.sendJson(jsonString);
+           }catch(MalformedURLException e){
+               e.printStackTrace();
+           }catch(IOException e){
+               e.printStackTrace();
+           }
+
+
+
+       }
 
     }
 }
