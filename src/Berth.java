@@ -1,7 +1,7 @@
 /**
  * Created by sebastian on 11/11/15.
  */
-package com.company;
+package com.port;
 public class Berth {
     public String id;
     public int ocupied;
